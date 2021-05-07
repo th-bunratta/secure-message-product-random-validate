@@ -2,6 +2,8 @@ package ku.message.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.Instant;
 import java.util.UUID;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,7 @@ public class Message {
 
     private String user;
     private String text;
+    private Instant createdAt;
 
     public UUID getId() {
         return id;
@@ -41,5 +44,13 @@ public class Message {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 }

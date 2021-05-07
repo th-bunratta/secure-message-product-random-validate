@@ -3,6 +3,7 @@ package ku.message.model;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.util.UUID;
 import javax.persistence.*;
 
@@ -10,9 +11,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 public class User {
-
-
-
     @Id
     @GeneratedValue(generator = "UUID")
     @Column(name = "id", updatable = false, nullable = false)
@@ -25,6 +23,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String role;
+    private Instant createdAt;
 
     public UUID getId() {
         return id;
@@ -80,6 +79,14 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 
     // .... generate getter/setter for all attributes

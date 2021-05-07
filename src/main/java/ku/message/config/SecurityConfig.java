@@ -1,6 +1,7 @@
 package ku.message.config;
 
 import ku.message.service.UserDetailsServiceImp;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -47,5 +48,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public PasswordEncoder encoder() {
         int strength = 14; // work factor of bcrypt
         return new BCryptPasswordEncoder(strength);
+    }
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
     }
 }
