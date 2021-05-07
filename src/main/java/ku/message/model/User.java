@@ -22,6 +22,7 @@ public class User {
 
     private String firstName;
     private String lastName;
+    private String email;
     private String role;
     private Instant createdAt;
 
@@ -87,6 +88,14 @@ public class User {
 
     public void setCreatedAt(Instant createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     // .... generate getter/setter for all attributes
